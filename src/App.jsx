@@ -26,6 +26,10 @@ function App() {
     });
   }
 
+  const searchContact = () => {
+
+  }
+
   return (
   <div>
       <Section>
@@ -33,7 +37,7 @@ function App() {
         <ContactForm onAdd={addContact} />
       </Section>
       <Section>
-        <SearchBox />
+        <SearchBox onSearch={searchContact} />
       </Section>
       <Section>
         <ContactList contacts={contacts} onDelete={deleteContact} />

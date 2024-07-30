@@ -44,3 +44,7 @@ button {
 button:hover {
   background-color: #201f1f;
 }
+
+h1 {
+  margin-bottom: 20px;
+}
