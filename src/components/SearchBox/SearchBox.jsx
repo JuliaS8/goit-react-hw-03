@@ -1,17 +1,19 @@
 import React from 'react'
 import css from './SearchBox.module.css'
 
-const SearchBox = () => {
+const SearchBox = ({value, onFilter}) => {
     return (
-        <div className={css.searchBox}>
-      <label htmlFor="text">Find contact by name
+    <div className={css.searchBox}>
+      <label htmlFor="text">Find contact by name:</label>
             <input
             type="text"
-            name="search"
+                value={value}
+                onChange={e => onFilter(e.target.value)}
             placeholder="Enter a name..."
             required
+                
             />
-            </label>
+            
             </div>
   )
 }
