@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ContactForm from './components/ContactForm/ContactForm'
 import SearchBox from './components/SearchBox/SearchBox'
 import ContactList from './components/ContactList/ContactList'
+import Section from './components/Section/Section'
 
 function App() {
 
@@ -12,12 +13,31 @@ function App() {
   {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
   ])
 
+  const addContact = (newContact) => {
+    setContacts((prevContacts) => {
+      return [...prevContacts, newContact]
+    })
+  }
+
+  const deleteContact = (contactId) => {
+    console.log(contactId)
+    setContacts(prevContacts => {
+      return prevContacts.filter(contact => contact.id !== contactId)
+    });
+  }
+
   return (
   <div>
-  <h1>Phonebook</h1>
-  <ContactForm />
-  <SearchBox />
-  <ContactList contacts={contacts} />
+      <Section>
+       <h1>Phonebook</h1>
+        <ContactForm onAdd={addContact} />
+      </Section>
+      <Section>
+        <SearchBox />
+      </Section>
+      <Section>
+        <ContactList contacts={contacts} onDelete={deleteContact} />
+        </Section>
 </div>
 
   )

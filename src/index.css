@@ -30,3 +30,17 @@ img {
   display: block;
   max-width: 100%;
 }
+
+button {
+  background-color: #525252;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto;
+}
+
+button:hover {
+  background-color: #201f1f;
+}
