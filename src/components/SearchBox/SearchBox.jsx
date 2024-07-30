@@ -7,13 +7,11 @@ const SearchBox = ({value, onFilter}) => {
       <label htmlFor="text">Find contact by name:</label>
             <input
             type="text"
-                value={value}
-                onChange={e => onFilter(e.target.value)}
+            value={value}
+            onChange={e => onFilter(e.target.value)}
             placeholder="Enter a name..."
-            required
-                
+            required     
             />
-            
             </div>
   )
 }
